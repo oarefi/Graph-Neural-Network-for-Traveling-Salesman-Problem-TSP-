@@ -17,6 +17,18 @@ pip install torch torch-geometric ortools matplotlib numpy
 ## TSP_GNN Model
 The TSP_GNN model is a graph neural network designed to solve the TSP. It takes as input the node positions (2D coordinates) of cities and uses GAT (Graph Attention) and GCN (Graph Convolutional Network) layers for message passing and aggregation. The model then outputs node embeddings that are used to determine the TSP tour.
 
+Using both GATConv and GCNConv layers in the model enables it to capture different aspects of the graph's structure and relationships between cities. 
+The GATConv layer with attention allows the model to focus on important neighbors, while the GCNConv layer helps capture higher-order dependencies and structural patterns in the graph.
+
+The GNN model uses both layers sequentially, first performing message passing using the GATConv layer and then applying an additional round of message passing with the GCNConv layer. 
+This sequence of layers enables the GNN to learn more sophisticated representations of the graph data and the underlying TSP problem.
+
+By using these convolutional layers, the GNN can efficiently incorporate information from the neighboring cities and iteratively update the node embeddings, leading to embeddings that encode useful information about the TSP tour. These representations can then be used to generate an approximation to the optimal tour for the TSP problem. Overall, the combination of GATConv and GCNConv layers allows the GNN to effectively model the TSP graph and make informed decisions about the order in which cities should be visited to minimize the total tour distance.
+
+## OR-Tools
+The code solve_tsp_optimal(node_positions) is used to solve the Traveling Salesman Problem (TSP) optimally using the OR-Tools library. 
+The TSP is a classic optimization problem where the goal is to find the shortest possible tour that visits each city exactly once and returns to the starting city (depot). 
+
 ## How to Use
 You can use the code to run experiments for solving the TSP using the GNN model and compare the results with optimal solutions found using OR-Tools.
 
