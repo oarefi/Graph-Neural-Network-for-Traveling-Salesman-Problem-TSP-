@@ -12,9 +12,9 @@ To run the code, you need the following dependencies:
 
 You can install the required dependencies using the following commands:
 
-'''
+```
 pip install torch torch-geometric ortools matplotlib numpy
-'''
+```
 
 
 ## TSP_GNN Model
