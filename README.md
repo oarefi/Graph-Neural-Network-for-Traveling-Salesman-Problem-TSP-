@@ -11,9 +11,9 @@ To run the code, you need the following dependencies:
 * NumPy
 
 You can install the required dependencies using the following commands:
-
+'''
 pip install torch torch-geometric ortools matplotlib numpy
-
+'''
 ## TSP_GNN Model
 The TSP_GNN model is a graph neural network designed to solve the TSP. It takes as input the node positions (2D coordinates) of cities and uses GAT (Graph Attention) and GCN (Graph Convolutional Network) layers for message passing and aggregation. The model then outputs node embeddings that are used to determine the TSP tour.
 
